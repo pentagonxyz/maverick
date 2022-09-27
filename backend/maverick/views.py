@@ -22,8 +22,8 @@ class RegisterView(generics.CreateAPIView):
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
-        '/maverick/token/',
+        '/maverick/login/',
         '/maverick/register/',
-        '/maverick/token/refresh/'
+        '/maverick/login/refresh/'
     ]
     return Response(routes)
