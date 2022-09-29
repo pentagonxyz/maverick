@@ -30,7 +30,8 @@ def getRoutes(request):
     ]
     return Response(routes)
 
-# Test
+# Example Endpoint
+# Requires authentication to access
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def test_endpoint(request):
