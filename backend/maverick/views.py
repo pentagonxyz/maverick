@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from maverick.serializers import MyTokenObtainPairSerializer, RegisterSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics
-from .models import MaverickUser
+from models import MaverickUser
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
