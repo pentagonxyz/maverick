@@ -10,6 +10,7 @@ from models import MaverickUser
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
+
 # Create your views here.
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -43,3 +44,10 @@ def test_endpoint(request):
         data = f'Congratulation your API just responded to POST request with text: {text}'
         return Response({'response': data}, status=status.HTTP_200_OK)
     return Response({}, status.HTTP_400_BAD_REQUEST)
+
+@api_view(["POST"])
+def add_challenge(request):
+    if not request.user.is_superuser:
+        return Response({'Authentication': 'Failed'}, status=status.HTTP_401_BAD_REQUEST)
+
+    pass
